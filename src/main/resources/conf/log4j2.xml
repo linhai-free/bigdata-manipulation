@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<configuration>
+    <Appenders>
+        <Appenders>
 
-</beans>
+            <Console name="console_out_appender" target="SYSTEM_OUT">
+                <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
+                <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            </Console>
+
+            <Console name="console_err_appender" target="SYSTEM_ERR">
+                <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
+                <PatternLayout pattern="%5p [%t] %d{yyyy-MM-dd HH:mm:ss} (%F:%L) %m%n" />
+            </Console>
+
+        </Appenders>
+    </Appenders>
+
+    <loggers>
+
+        <root level="ALL" includeLocation="true">
+            <appender-ref ref="console_out_appender" />
+            <appender-ref ref="console_err_appender" />
+        </root>
+
+    </loggers>
+</configuration>

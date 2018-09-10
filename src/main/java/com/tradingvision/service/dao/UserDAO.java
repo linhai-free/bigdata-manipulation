@@ -4,7 +4,6 @@ package com.tradingvision.service.dao;
  * Created by luodejin on 17/2/7.
  */
 
-
 import com.tradingvision.service.model.User;
 
 import java.util.List;

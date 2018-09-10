@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/bigdata")
 public class UserController {
 
-    @Autowired //自动装配
+    @Autowired
     private UserService userService;
 
     @RequestMapping("/selectUserById")
